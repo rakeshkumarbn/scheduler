@@ -1,0 +1,110 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="$dismiss()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h3 class="modal-title">Campaign Details</h3>
+</div>
+<div class="modal-body">
+    <div ng-repeat="campaign in previewCampaigns | filter : campaign: campaign.CampaignId=newPreviewModal">
+		<div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Opportunity Identification</h3>
+            </div>
+            <div class="panel-body">
+                <dl class="dl-horizontal">                    
+                    <dt>Campaign Name :</dt>
+                    <dd>{{campaign.CampaignDetails.CampaignIdentification.CampaignName}}</dd>
+                    <dt>Campaign Description :</dt>
+                    <dd>{{campaign.CampaignDetails.CampaignIdentification.CampaignDescription}}</dd>
+                    <dt>Line of Business Group :</dt>
+                    <dd>{{campaign.CampaignDetails.CampaignIdentification.CampaignSchemaGroup.lobGroup}}</dd>
+                    <dt>Line of Business :</dt>
+                    <dd>{{campaign.CampaignDetails.CampaignIdentification.CampaignSchema.name}}</dd>
+                    <dt>Delivery Type :</dt>
+                    <dd>{{campaign.CampaignDetails.CampaignIdentification.CampaignType.name}}</dd>
+                    <dt>Field Name :</dt>
+                    <dd>
+                        <span ng-repeat="selectedFields in campaign.CampaignDetails.CampaignIdentification.CampaignFieldnames">
+                            {{selectedFields.name}} {{$last ? '' : ', '}}
+                        </span>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Opportunity Selection</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table os-table-preview">
+                    <thead>
+                        <tr>
+                            <th width="30%">Business</th>
+                            <th>Condition</th>
+                            <th width="20%">Condition Match</th>
+                            <th width="20%">Relationship to Rule</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="selectionData in campaign.CampaignDetails.CampaignSelection">
+                            <td>
+                                {{selectionData.CampaignSelectionFieldNames.name}}
+                            </td>
+                            <td>
+                                {{selectionData.operator.name}}
+                            </td>
+                            <td>
+                                {{selectionData.value}}
+                            </td>
+                            <td>
+                                <span ng-class="{'hide-visibility':$last}">{{selectionData.relationalOperator.name}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Opportunity Scheduling</h3>
+            </div>
+            <div class="panel-body">
+                <dl class="dl-horizontal">
+                    <dt>Schedule Type :</dt>
+                    <dd>{{campaign.CampaignDetails.CampaignScheduler.CampaignScheduleType.name}}</dd>
+                    <dt ng-if="campaign.CampaignDetails.CampaignScheduler.CampaignScheduleType.name != 'One Time' && campaign.CampaignDetails.CampaignScheduler.CampaignScheduleType.name != 'Daily'">Schedule Type Value :</dt>
+                    <dd ng-if="campaign.CampaignDetails.CampaignScheduler.CampaignScheduleType.name == 'Weekly'">
+                        <span ng-repeat="selectedWeekly in campaign.CampaignDetails.CampaignScheduler.CampaignScheduleTypeValue">
+                            {{selectedWeekly.name}} {{$last ? '' : ', '}}
+                        </span>                                    
+                    </dd>
+                    <dd ng-if="campaign.CampaignDetails.CampaignScheduler.CampaignScheduleType.name == 'Monthly'">
+                        <span ng-repeat="selectedMonthly in campaign.CampaignDetails.CampaignScheduler.CampaignScheduleTypeValue">
+                            {{selectedMonthly.name}} {{$last ? '' : ', '}}
+                        </span>                                    
+                    </dd>
+                    <dd ng-if="campaign.CampaignDetails.CampaignScheduler.CampaignScheduleType.name == 'Yearly'">
+                        <span ng-repeat="selectedYearly in campaign.CampaignDetails.CampaignScheduler.CampaignScheduleTypeValue">
+                            {{selectedYearly.name}} {{$last ? '' : ', '}}
+                        </span>                                    
+                    </dd>
+                    <dt>Delivery Mode :</dt>
+                    <dd>{{campaign.CampaignDetails.CampaignScheduler.CampaignDeliveryMode.name}}</dd>
+                    <dt>Template Type :</dt>
+                    <dd>{{campaign.CampaignDetails.CampaignScheduler.CampaignTemplateType.name}}</dd>
+                    <dt>Template ID :</dt>
+                    <dd ng-if="campaign.CampaignDetails.CampaignScheduler.CampaignTemplateId.name !== 'Custom'">{{campaign.CampaignDetails.CampaignScheduler.CampaignTemplateId.name}}</dd>
+                    <dd ng-if="campaign.CampaignDetails.CampaignScheduler.CampaignTemplateId.name === 'Custom'">{{campaign.CustomTemplate.name}}</dd>
+                    <dd>{{campaign.CampaignDetails.CampaignScheduler.campaignScheduleType.name}}</dd>
+                    <dt>Start Date :</dt>
+                    <dd>{{campaign.CampaignDetails.CampaignScheduler.CampaignStartDate | date : 'MM/dd/yyyy'}}</dd>
+                    <dt>End Date :</dt>
+                    <dd>{{campaign.CampaignDetails.CampaignScheduler.CampaignEndDate | date : 'MM/dd/yyyy'}}</dd>
+                    <dt>Start Time :</dt>
+                    <dd>{{campaign.CampaignDetails.CampaignScheduler.CampaignStartTime.display}}</dd>
+                </dl>
+            </div>
+        </div>    
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning" type="button" ng-click="$dismiss()">Close</button>
+</div>

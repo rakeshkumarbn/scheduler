@@ -1,0 +1,105 @@
+<!--<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+        <span ng-click="osScope.location('/')" class="back-dash">Back to Dashboard</span>
+        <h3 class="nav-title-text">Campaign Scheduler</h3>
+        <span class="welcome"> Welcome Admin</span>
+    </div>
+</nav>-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Campaign Scheduler</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a>Welcome FirstName</a></li>
+                <li ng-click="osScope.location('/')"><a>Back to Dashboard</a></li>
+                <li><a>SignOut</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container fixedTopMrg container-content">
+    <div class="progress">
+        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 25%;">
+            25%
+        </div>
+    </div>
+    <div>
+        <h3>Opportunity Selection</h3>
+    </div>
+    <div class="btn-group breadcrumb">
+        <a href="#" class="disabled"><span class="desk-breadcrumb"><i class="glyphicon glyphicon-home"></i> Opportunity Identification</span><span class="mob-breadcrumb"><i class="glyphicon glyphicon-home"></i> OI</span></a>
+        <a href="#os" class="active"><span class="desk-breadcrumb">Opportunity Selection</span><span class="mob-breadcrumb">OS</span></a>
+        <a href="#" class="disabled"><span class="desk-breadcrumb">Opportunity Delivery</span><span class="mob-breadcrumb">OD</span></a>
+        <a href="#" class="disabled"><span class="desk-breadcrumb">Review</span><span class="mob-breadcrumb">Review</span></a>
+        <a href="#" class="disabled"><span class="desk-breadcrumb">Confirmation</span><span class="mob-breadcrumb">Done</span></a>
+    </div>
+    <div class="up-arrow up-arrow-os  content-div">
+        <form name="osForm" novalidate>
+            <div class="row">
+                <button class="btn btn-info" style="float: right;margin-bottom: 1em" ng-click="osScope.showModal()">
+                    View Similar Campaigns
+                </button>
+            </div>
+            <div class="row" style="margin-bottom: 2em;color:#000;">
+                <table class="table os-table">
+                    <thead>
+                        <tr>
+                            <th width="30%">Business *</th>
+                            <th>Condition *</th>
+                            <th width="20%">Condition Match *</th>
+                            <th width="20%">Relationship to Rule  *</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="Opportunity in osScope.Opportunity">
+                            <td>
+                                <select class="select-box" style="padding: 2px"
+                                        name="fieldname.{{Opportunity}}" ng-required="true" ng-model="osScope.selectedFieldnames[Opportunity]" ng-options="name.name for name in osScope.fieldNames track by name.name">
+                                    <option value="">Select</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="select-box" name="operator.{{Opportunity}}" ng-required="true" ng-model="osScope.selectedOperators[Opportunity]" ng-options="operator.name for operator in osScope.operator track by operator.name">
+                                    <option value="">Select</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="value.{{Opportunity}}" ng-model="osScope.selectedValues[Opportunity]" ng-required="true" ng-trim="true" value="" >
+
+                                </input>
+                            </td>
+                            <td>
+                                <select class="select-box" name="relationalOperator.{{Opportunity}}" ng-model="osScope.selectedRelationalOperators[Opportunity]" ng-options="relationalOperator.name for relationalOperator in osScope.relationalOperator track by relationalOperator.name" ng-change="osScope.lastRelationalOperator($last,osScope.selectedRelationalOperators[Opportunity])" ng-required="!$last">
+                                    <option value="">Select</option>
+                                </select>
+                            </td>
+                            <td>
+                                <button class="btn-icon" ng-disabled="osForm.$error.required || osScope.selectedRelationalOperators[Opportunity] === null" ng-class="{lowOpacity : osForm.$error.required || osScope.selectedRelationalOperators[Opportunity] === null}" ng-click="osScope.add()"><span class="glyphicon glyphicon-plus" style="color: #2b542c"></span></button>
+                                <button class="btn-icon" ng-class="osScope.hideFirstRemove(Opportunity)" ng-click="osScope.remove($index)"><span class="glyphicon glyphicon-remove" style="color: #ff0000" ></span></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12  col-sm-12">
+                    <div class="btn  btn-default btn-next pull-left" ng-click="osScope.location('/oi')" >< Edit </div>
+                    <button type="submit" class="btn btn-next pull-right" ng-click="osScope.location('/sched')" ng-disabled="osForm.$error.required || osScope.disableRelationalOperator">Next > </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

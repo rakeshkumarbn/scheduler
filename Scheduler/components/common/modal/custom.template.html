@@ -1,0 +1,39 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="$dismiss()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h3 class="modal-title">Create Custom Template</h3>
+</div>
+<div class="modal-body"> 
+    <form name="customTemplateForm" novalidate>   
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="form-group">
+                    <label for="templateName">Template Name *</label>
+                    <input type="text" id="templateName" name="templateName" class="form-control" ng-model="customTemplateName">
+                    </input>
+                </div>
+            </div>   
+        </div>  
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="form-group">
+                    <label for="fieldName">Field Names *</label>
+                    <select id="fieldName" name="fieldName" class="form-control select-box" ng-model="customFieldName" ng-change="onChangeModalFieldName(customFieldName)" data-ng-options="type.name for type in customTemplateVar.fieldNames track by type.name">
+                        <option value="">Select</option>
+                    </select>
+                </div>
+            </div>   
+        </div>   
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="form-group">
+                    <label for="templateContainer">Template Container *</label>
+                    <textarea id="templateContainer"  name="templateContainer" class="form-control" ng-model="customTemplateVar.customTemplateContainer"></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-info" type="button" ng-click="newCustomTemplate(customTemplateName,customTemplateVar.customTemplateContainer)" ng-disabled="!customTemplateName || !customTemplateVar.customTemplateContainer">Create</button>
+    <button class="btn btn-warning" type="button" ng-click="$dismiss()">Close</button>
+</div>

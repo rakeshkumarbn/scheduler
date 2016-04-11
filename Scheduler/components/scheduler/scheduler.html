@@ -1,0 +1,231 @@
+<!--<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"
+     style="background-color: #5bc0de;text-align: center;color:#003087;">
+    <div class="navbar-header" style="float:inherit">
+        <span ng-click="schedScope.location('/')"
+              style="cursor: pointer;display: inline-block;float: left;margin-top: 1em ;padding-left: 1em">Back to Dashboard</span>
+
+        <h3 style="font-weight: bold;display: inline-block">Campaign Scheduler</h3>
+        <span style="display: inline-block;float: right;margin-top: 1em ;padding-right: 1em"> Welcome Admin</span>
+    </div>
+</nav>-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Campaign Scheduler</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a>Welcome FirstName</a></li>
+                <li ng-click="schedScope.location('/')"><a>Back to Dashboard</a></li>
+                <li><a>SignOut</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container fixedTopMrg container-content">
+    <div class="progress">
+        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 50%;">
+            50%
+        </div>
+    </div>
+    <div>
+        <h3>Opportunity Delivery</h3>
+    </div>
+    <div class="btn-group breadcrumb">
+        <a href="#" class="disabled"><span class="desk-breadcrumb"><i class="glyphicon glyphicon-home"></i> Opportunity Identification</span><span
+                class="mob-breadcrumb"><i class="glyphicon glyphicon-home"></i> OI</span></a>
+        <a href="#" class="disabled"><span class="desk-breadcrumb">Opportunity Selection</span><span
+                class="mob-breadcrumb">OS</span></a>
+        <a href="#sched" class="active"><span class="desk-breadcrumb">Opportunity Delivery</span><span
+                class="mob-breadcrumb">OD</span></a>
+        <a href="#" class="disabled"><span class="desk-breadcrumb">Review</span><span
+                class="mob-breadcrumb">Review</span></a>
+        <a href="#" class="disabled"><span class="desk-breadcrumb">Confirmation</span><span
+                class="mob-breadcrumb">Done</span></a>
+    </div>
+    <div class="up-arrow up-arrow-sched  content-div">
+        <form name="schedulerForm" novalidate>
+            <div class="row">
+                <button class="btn btn-info" style="float: right;margin-bottom: 1em" ng-click="schedScope.showModal()">
+                    View Similar Campaigns
+                </button>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="form-group">
+                        <label for="scheduleType">Schedule Type *</label>
+                        <select id="scheduleType" name="scheduleType" required class="form-control dropdown select-box"
+                                ng-change="schedScope.schedType(schedScope.scheduleType)"
+                                ng-model="schedScope.scheduleType"
+                                data-ng-options="type.name for type in schedScope.scheduleTypes track by type.name">
+                            <option value="">Select</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="form-group" ng-if="schedScope.weekly === true">
+                        <label for="">Weekly&nbsp; :</label>
+
+                        <div style="display: inline-block;width: 100%"
+                             multi-select
+                             input-model="schedScope.weeklyValues"
+                             output-model="schedScope.weeklyOutputModel"
+                             button-label="icon name"
+                             item-label="icon name maker"
+                             tick-property="ticked"
+                                >
+                        </div>
+                    </div>
+                    <div class="form-group" ng-if="schedScope.monthly === true">
+                        <label for="">Monthly&nbsp; :</label>
+
+                        <div style="display: inline-block;width: 100%"
+                             multi-select
+                             input-model="schedScope.monthlyValues"
+                             output-model="schedScope.monthlyOutputModel"
+                             button-label="icon name"
+                             item-label="icon name maker"
+                             tick-property="ticked"
+                                >
+                        </div>
+                    </div>
+                    <div class="form-group" ng-if="schedScope.yearly === true">
+                        <label for="">Yearly&nbsp; :</label>
+
+                        <div style="display: inline-block;width: 100%"
+                             multi-select
+                             input-model="schedScope.yearlyValues"
+                             output-model="schedScope.yearlyOutputModel"
+                             button-label="icon name"
+                             item-label="icon name maker"
+                             tick-property="ticked"
+                                >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="form-group">
+                        <label for="deliveryMode">Delivery Mode *</label>
+                        <select id="deliveryMode" name="deliveryMode" required class="form-control select-box"
+                                ng-model="schedScope.deliveryMode"
+                                ng-change="schedScope.deliveryModeType(schedScope.deliveryMode)"
+                                data-ng-options="type.name for type in schedScope.deliveryModes track by type.name">
+                            <option value="">Select</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row" ng-if="schedScope.showDeliveryModeType === true">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="form-group">
+                        <label for="templateType">Template Type *</label>
+                        <select id="templateType" name="templateType" required class="form-control select-box"
+                                ng-model="schedScope.templateType"
+                                ng-change="schedScope.tempalateTypeChange(schedScope.templateType)"
+                                data-ng-options="type.name for type in schedScope.templateTypes track by type.name">
+                            <option value="">Select</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="form-group">
+                        <label for="templateId">Template ID *</label>
+
+                        <div class="input-group" style="width: 100%">
+                            <select id="templateId" name="templateId" class="form-control select-box"
+                                    ng-model="schedScope.templateId"
+                                    ng-required="true"
+                                    data-ng-options="typeTemplateIds.name for typeTemplateIds in schedScope.templateIds track by typeTemplateIds.name">
+                                <option value="">Select</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4" ng-if="schedScope.showCustomButton">
+                    <div class="form-group ">
+                        <label>Create Custom Template</label>
+
+                        <div>
+                            <button style="cursor:pointer;"
+                                    ng-click="schedScope.templateIdCustom('Create Custom Template')"
+                                    class="btn btn-success">Create
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="form-group">
+                        <label for="">Start Date *</label>
+
+                        <div class="input-group">
+                            <input ng-model="schedScope.startDate" type="text" id="startDate" name="startDate"
+                                   class="form-control" datepicker-popup="MM-dd-yyyy" datepicker-append-to-body="true"
+                                   is-open="schedScope.isSD" ng-click="schedScope.open('start')" required
+                                   close-text="Close"/>
+                            <span class="input-group-addon cursor" ng-click="schedScope.open('start')">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="form-group">
+                        <label for="">End Date *</label>
+
+                        <div class="input-group">
+                            <input ng-model="schedScope.endDate" type="text" id="endDate" name="endDate"
+                                   class="form-control" datepicker-popup="MM-dd-yyyy" datepicker-append-to-body="true"
+                                   is-open="schedScope.isED" ng-click="schedScope.open('end')" required
+                                   close-text="Close"/>
+                            <span class="input-group-addon cursor" ng-click="schedScope.open('end')">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="form-group">
+                        <label for="">Start Time *</label>
+                        <select name="startTime" class="select-box" required ng-model="schedScope.selectedStartTime"
+                                ng-options="time.display for time in schedScope.startTimes track by time.display"
+                                required>
+                            <option value="">Start Time</option>
+                        </select>
+                    </div>
+                </div>
+                <!--                 <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="">End Time</label>
+                                        <select name="endTime" class="select-box" ng-model="schedScope.selectedEndTime" ng-options="time.id as time.display for time in schedScope.endTimes" required>
+                                            <option value="">End Time</option>
+                                        </select>
+                                    </div>
+                                </div> -->
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12  col-sm-12">
+                    {{schedulerForm.$error.required}}
+                    <div class="btn  btn-default btn-next pull-left" ng-click="schedScope.location('/os')">< Edit</div>
+                    <button class="btn btn-next pull-right" ng-click="schedScope.location('/preview')"
+                            ng-disabled="schedulerForm.$error.required">Next >
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

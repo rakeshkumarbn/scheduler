@@ -1,0 +1,239 @@
+[{
+  "CampaignId": 1,
+  "CampaignEnableDisableFlag":true,
+  "CampaignScheduleType":"Batch",
+  "CampaignEnabled":{"name":"false"},
+  "CampaignType":{"name" : "Batch"},
+  "CampaignDetails":{
+    "CampaignIdentification" : {
+      "CampaignName": "Test Campaign",
+      "CampaignSchemaGroup": {"lobGroup" : "Caremark"},
+      "CampaignSchema": {"name" : "Test Schema1"},
+      "CampaignDescription" : "Test Desc 1",
+      "CampaignType":{"name" : "Batch"},
+      "CampaignFieldnames" : [{"name" :"ColumnName1"},{"name" : "ColumnName3"}]
+    },
+    "CampaignSelection" : [{
+      "CampaignSelectionFieldNames": {"name" : "ColumnName1"},
+      "operator": {"name" : "EQUALS"},
+      "relationalOperator": null,
+      "value": "1"
+    }],
+    "CampaignScheduler" : {
+      "CampaignStartDate":"12-11-2015",
+      "CampaignEndDate":"12-11-2015",
+      "CampaignStartTime":{"display" : "4:00 am"},
+      "CampaignDeliveryMode":{"name" : "SMS"},
+      "CampaignTemplateType" : {"name" : "Native"},
+      "CampaignTemplateId" : {"name" : "Template 1"},
+      "CampaignScheduleType":{"name" : "Weekly"},
+      "CampaignScheduleTypeValue": [{"name" : "Monday"}]
+    }
+  }
+}, {
+  "CampaignId": 2,
+  "CampaignEnableDisableFlag":true,
+  "CampaignScheduleType":"Real-Time",
+  "CampaignEnabled":{"name":"true"},
+  "CampaignType":{"name" : "Real-Time"},
+  "CampaignDetails":{
+    "CampaignIdentification" : {
+      "CampaignName": "Test Campaign",
+      "CampaignSchemaGroup": {"lobGroup" : "Retail"},
+      "CampaignSchema": {"name" : "Test Schema2"},
+      "CampaignDescription" : "Test Desc 2",
+      "CampaignType":{"name" : "Real-Time"},
+      "CampaignFieldnames" : [{"name" :"ColumnName1"},{"name" : "ColumnName3"}]
+    },
+    "CampaignSelection" : [{
+      "CampaignSelectionFieldNames": {"name" : "ColumnName1"},
+      "operator": {"name" : "EQUALS"},
+      "relationalOperator": {"name" : "AND"},
+      "value": "1"
+    }],
+    "CampaignScheduler" : {
+      "CampaignStartDate":"12-05-2015",
+      "CampaignEndDate":"12-05-2015",
+      "CampaignStartTime":{"display" : "4:00 am"},
+      "CampaignDeliveryMode":{"name" : "Mail"},
+      "CampaignTemplateType" : {"name" : "WCM"},
+      "CampaignTemplateId" : {"name" : "Template 3"},
+      "CampaignScheduleType":{"name" : "Weekly"},
+      "CampaignScheduleTypeValue": [{"name" : "Monday"}]
+    }
+  }
+},
+  {
+    "CampaignId": 3,
+  "CampaignEnableDisableFlag":false,
+    "CampaignScheduleType":"Batch",
+    "CampaignEnabled":{"name":"false"},
+    "CampaignType":{"name" : "Real-Time"},
+  "CampaignDetails":{
+    "CampaignIdentification" : {
+      "CampaignName": "Test Campaign",
+      "CampaignSchemaGroup": {"lobGroup" : "Caremark"},
+      "CampaignSchema": {"name" : "Test Schema1"},
+      "CampaignDescription" : "Test Desc 3",
+      "CampaignType":{"name" : "Real-Time"},
+      "CampaignFieldnames" : [{"name" :"ColumnName1"},{"name" : "ColumnName3"}]
+    },
+    "CampaignSelection" : [{
+      "CampaignSelectionFieldNames": {"name" : "ColumnName1"},
+      "operator": {"name" : "EQUALS"},
+      "relationalOperator": {"name" : "AND"},
+      "value": "1"
+    }],
+    "CampaignScheduler" : {
+      "CampaignStartDate":"12-02-2015",
+      "CampaignEndDate":"12-02-2015",
+      "CampaignStartTime":{"display" : "4:00 am"},
+      "CampaignDeliveryMode":{"name" : "SMS"},
+      "CampaignTemplateType" : {"name" : "BCC"},
+      "CampaignTemplateId" : {"name" : "Template 4"},
+      "CampaignScheduleType":{"name" : "Weekly"},
+      "CampaignScheduleTypeValue": [{"name" : "Monday"}]
+    }
+  }
+  },
+  {
+    "CampaignId": 4,
+  "CampaignEnableDisableFlag":false,
+    "CampaignScheduleType":"Real-Time",
+    "CampaignEnabled":{"name":"false"},
+    "CampaignType":{"name" : "Batch"},
+  "CampaignDetails":{
+    "CampaignIdentification" : {
+      "CampaignName": "Test Campaign",
+      "CampaignSchemaGroup": {"lobGroup" : "Speciality"},
+      "CampaignSchema": {"name" : "Test Schema4"},
+      "CampaignDescription" : "Test Desc 4",
+      "CampaignType":{"name" : "Batch"},
+      "CampaignFieldnames" : [{"name" :"ColumnName1"},{"name" : "ColumnName3"}]
+    },
+    "CampaignSelection" : [{
+      "CampaignSelectionFieldNames": {"name" : "ColumnName1"},
+      "operator": {"name" : "EQUALS"},
+      "relationalOperator": {"name" : "AND"},
+      "value": "1"
+    }],
+    "CampaignScheduler" : {
+      "CampaignStartDate":"11-03-2015",
+      "CampaignEndDate":"11-03-2015",
+      "CampaignStartTime":{"display" : "4:00 am"},
+      "CampaignDeliveryMode":{"name" : "SMS"},
+      "CampaignTemplateType" : {"name" : "Native"},
+      "CampaignTemplateId" : {"name" : "Template 2"},
+      "CampaignScheduleType":{"name" : "Weekly"},
+      "CampaignScheduleTypeValue": [{"name" : "Monday"}]
+    }
+  }
+  },
+  {
+    "CampaignId": 5,
+  "CampaignEnableDisableFlag":true,
+    "CampaignScheduleType":"Batch",
+    "CampaignEnabled":{"name":"true"},
+    "CampaignType":{"name" : "Batch"},
+  "CampaignDetails":{
+    "CampaignIdentification" : {
+      "CampaignName": "Test Campaign",
+      "CampaignSchemaGroup": {"lobGroup" : "Speciality"},
+      "CampaignSchema": {"name" : "Test Schema5"},
+      "CampaignDescription" : "Test Desc 5",
+      "CampaignType":{"name" : "Batch"},
+      "CampaignFieldnames" : [{"name" :"ColumnName1"},{"name" : "ColumnName3"}]
+    },
+    "CampaignSelection" :[ {
+      "CampaignSelectionFieldNames": {"name" : "ColumnName1"},
+      "operator": {"name" : "EQUALS"},
+      "relationalOperator": {"name" : "AND"},
+      "value": "1"
+    }],
+    "CampaignScheduler" : {
+      "CampaignStartDate":"11-03-2015",
+      "CampaignEndDate":"11-03-2015",
+      "CampaignStartTime":{"display" : "4:00 am"},
+      "CampaignDeliveryMode":{"name" : "Mail"},
+      "CampaignTemplateType" : {"name" : "WCM"},
+      "CampaignTemplateId" : {"name" : "Template 2"},
+      "CampaignScheduleType":{"name" : "Weekly"},
+      "CampaignScheduleTypeValue": [{"name" : "Monday"}]
+    }
+  }
+  },
+  {
+    "CampaignId": 6,
+  "CampaignEnableDisableFlag":false,
+    "CampaignScheduleType":"Batch",
+    "CampaignEnabled":{"name":"false"},
+    "CampaignType":{"name" : "Real-Time"},
+  "CampaignDetails":{
+    "CampaignIdentification" : {
+      "CampaignName": "Test Campaign",
+      "CampaignSchemaGroup": {"lobGroup" : "Retail"},
+      "CampaignSchema": {"name" : "Test Schema6"},
+      "CampaignDescription" : "Test Desc 6",
+      "CampaignType": {"name" : "Real-Time"},
+      "CampaignFieldnames" : [{"name" :"ColumnName1"},{"name" : "ColumnName3"}]
+    },
+    "CampaignSelection" : [{
+      "CampaignSelectionFieldNames": {"name" : "ColumnName1"},
+      "operator": {"name" : "EQUALS"},
+      "relationalOperator": {"name" : "AND"},
+      "value": "1"
+    }],
+    "CampaignScheduler" : {
+      "CampaignStartDate":"11-03-2015",
+      "CampaignEndDate":"11-03-2015",
+      "CampaignStartTime":{"display" : "4:00 am"},
+      "CampaignDeliveryMode":{"name" : "SMS"},
+      "CampaignTemplateType" : {"name" : "WCM"},
+      "CampaignTemplateId" : {"name" : "Template 3"},
+      "CampaignScheduleType":{"name" : "Weekly"},
+      "CampaignScheduleTypeValue": [{"name" : "Monday"}]
+    }
+  }
+  },
+  {
+    "CampaignId": 7,
+  "CampaignEnableDisableFlag":false,
+    "CampaignScheduleType":"Batch",
+    "CampaignEnabled":{"name":"true"},
+    "CampaignType":{"name" : "Real-Time"},
+  "CampaignDetails":{
+    "CampaignIdentification" : {
+      "CampaignName": "Test Campaign",
+      "CampaignSchemaGroup": {"lobGroup" : "Retail"},
+      "CampaignSchema": {"name" : "Test Schema7"},
+      "CampaignDescription" : "Test Desc 7",
+      "CampaignType":{"name" : "Real-Time"},
+      "CampaignFieldnames" : [{"name" :"ColumnName1"},{"name" : "ColumnName3"}]
+    },
+    "CampaignSelection" : [
+      {
+        "CampaignSelectionFieldNames": {"name" : "ColumnName1"},
+        "operator": {"name" : "EQUALS"},
+        "relationalOperator": {"name" : "AND"},
+        "value": "1"
+      },
+      {
+        "CampaignSelectionFieldNames": {"name" : "ColumnName3"},
+        "operator": {"name" : " ! EQUALS"},
+        "relationalOperator": {"name" : "OR"},
+        "value": "1"
+      }
+    ],
+    "CampaignScheduler" : {
+      "CampaignStartDate":"11-03-2015",
+      "CampaignEndDate":"11-03-2015",
+      "CampaignStartTime":{"display" : "4:00 am"},
+      "CampaignDeliveryMode":{"name" : "SMS"},
+      "CampaignTemplateType" : {"name" : "BCC"},
+      "CampaignTemplateId" : {"name" : "Template 4"},
+      "CampaignScheduleType":{"name" : "Weekly"},
+      "CampaignScheduleTypeValue": [{"name" : "Monday"}]
+    }
+  }
+  }
+]

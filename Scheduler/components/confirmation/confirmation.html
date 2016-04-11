@@ -1,0 +1,61 @@
+<!--<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"
+     style="background-color: #5bc0de;text-align: center;color:#003087;">
+    <div class="navbar-header" style="float:inherit">
+        <span ng-click="confirmationScope.location('/')" style="cursor: pointer;display: inline-block;float: left;margin-top: 1em ;padding-left: 1em">Back to Dashboard</span>
+        <h3 style="font-weight: bold;display: inline-block">Campaign Scheduler</h3>
+        <span style="display: inline-block;float: right;margin-top: 1em ;padding-right: 1em"> Welcome Admin</span>
+    </div>
+</nav>-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Campaign Scheduler</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a>Welcome FirstName</a></li>
+                <li ng-click="confirmationScope.location('/')"><a>Back to Dashboard</a></li>
+                <li><a>SignOut</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container fixedTopMrg container-content">
+    <div class="progress">
+        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 100%;">
+            100%
+        </div>
+    </div>
+    <div>
+        <h3>Confirmation</h3>
+    </div>
+    <div class="btn-group breadcrumb">
+        <a href="#" class="disabled"><span class="desk-breadcrumb"><i class="glyphicon glyphicon-home"></i> Opportunity Identification</span><span class="mob-breadcrumb"><i class="glyphicon glyphicon-home"></i> OI</span></a>
+        <a href="#" class="disabled"><span class="desk-breadcrumb">Opportunity Selection</span><span class="mob-breadcrumb">OS</span></a>
+        <a href="#" class="disabled"><span class="desk-breadcrumb">Opportunity Delivery</span><span class="mob-breadcrumb">OD</span></a>
+        <a href="#" class="disabled"><span class="desk-breadcrumb">Review</span><span class="mob-breadcrumb">Review</span></a>
+        <a href="#confirmation" class="active"><span class="desk-breadcrumb">Confirmation</span><span class="mob-breadcrumb">Done</span></a>
+    </div>
+    <div class="up-arrow up-arrow-confirmation content-div" style="color:#000;">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <img width="35px" ng-src="assets/images/success.png" src="assets/images/success.png">
+                Campaign has been scheduled successfully!
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="btn btn-info pull-right" ng-click="confirmationScope.location('/dashboard')" >Done</div>
+            </div>
+        </div>
+    </div>  
+</div>

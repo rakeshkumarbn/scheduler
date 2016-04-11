@@ -1,0 +1,40 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="$dismiss()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h3 class="modal-title">Similar Campaigns</h3>
+</div>
+<div class="modal-body">
+    <table class="table table-responsive similar-table-list">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Template Id</th>
+                <th>Name</th>
+                <th>Line of Business</th>
+                <th>Create Date</th>
+                <th>Delivery Type</th>
+                <th>Delivery Mode</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="campaign in campaigns = (campaigns  | filter : campaignsSchemaName)">
+                <td>{{ campaign.CampaignId }}</td>
+                <td>{{ campaign.CampaignDetails.CampaignScheduler.CampaignTemplateId.name }}</td>
+                <td>{{ campaign.CampaignDetails.CampaignIdentification.CampaignName }}</td>
+                <td>{{ campaign.CampaignDetails.CampaignIdentification.CampaignSchema.name }}</td>
+                <td>{{ campaign.CampaignDetails.CampaignScheduler.CampaignStartDate }}</td>
+                <td>{{ campaign.CampaignDetails.CampaignIdentification.CampaignType.name }}</td>
+                <td>{{ campaign.CampaignDetails.CampaignScheduler.CampaignDeliveryMode.name }}</td>
+                <td>
+                    <button type="button" ng-click="previewModal(campaign.CampaignId)" class="btn btn-warning"><i class="glyphicon glyphicon-eye-open"></i></button>
+                </td>
+            </tr>
+            <tr ng-if="!campaigns.length">
+                <td colspan="7">No similar campaigns found</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning" type="button" ng-click="$dismiss()">Close</button>
+</div>

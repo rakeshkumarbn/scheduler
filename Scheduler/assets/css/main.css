@@ -1,0 +1,649 @@
+@media only screen and (min-width : 769px) {
+    .desktop-container{
+        max-width: 900px;
+        margin: 4em auto;
+        position: relative;
+        background: #F7F9FA
+    }
+
+}
+
+.clear{clear: both;}
+.hide-visibility{visibility: hidden;}
+.lowOpacity{opacity: 0.5;}
+.fixedTopMrg{margin-top: 50px;}
+.table-border{border: 1px solid #ccc;}
+.dashboardWidth{width: 80%;}
+.mobileAddCampaign{display: none;margin-bottom: 15px;}
+
+.border-right{
+    border-right: 1px solid grey !important;
+}
+.padding-left{
+    padding-left: 0.5em;
+}
+.width-1{
+    width: 1% !important;
+}
+
+.navbar{
+    /*height: 89px;background-color: #5bc0de;*/text-align: center;color:#003087;
+}
+.navbar-inverse{
+    background: #30426a;
+    border-color: #fff;
+}
+.navbar-inverse .navbar-brand{
+    color: #fff;
+}
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
+    background: #30426a;
+}
+.navbar-inverse .navbar-nav>li>a{
+    color: #E4E4E4;
+    cursor: pointer;
+}
+
+
+.dropdown.select-box a.firstDropdown{
+    padding: 7px 139px 7px 15px;
+    margin: 0px 0px 0px -11px;
+    color: #555;
+    text-decoration: none;
+}
+.open>.dropdown-menu {
+    width: 100%;
+}
+
+/********** Checkbox **********/
+
+.custom-checkbox input[type="checkbox"]{
+    background-color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    position: relative;
+    width: 20px;
+    -webkit-appearance: none;
+    border: 1px solid #ddd;
+    margin: 0;
+    left: -20px;
+    top: -5px;
+}
+
+.custom-checkbox input[type="checkbox"]:after {
+    /*background-color: #444; */
+    border-radius: 25px;
+    content: '';
+    display: block;
+    height: 0px;
+    left: 0px;
+    position: relative;
+    top: 0px;
+    width: 0px;
+}
+.custom-checkbox input[type="checkbox"]:checked{
+    background-color: #fff;
+    border: 1px solid #fff;
+    top: -11px;
+}
+.custom-checkbox input[type="checkbox"]:checked:after {
+    content: '\e013';
+    position: relative;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    color: #30426a;
+    -moz-osx-font-smoothing: grayscale;
+    top: 2px;
+    left: 3px;
+    font-size: 12px;
+}
+
+
+.container-content{background: #F7F9FA;}
+.desk-breadcrumb{
+    display: block;
+}
+.mob-breadcrumb{
+    display: none;
+}
+.back-dash{
+    cursor: pointer;position: absolute;top: 2.5em;left: 1em;
+}
+.nav-title-text{
+    font-weight: bold;position: absolute;width: 10em;margin-left: -5em;top: 50%;left:50%;height: 1.4em;margin-top: -0.7em;
+}
+.welcome{
+    position: absolute;right: 1em;top: 2.5em;
+}
+
+select::-ms-expand {
+    display: none;
+}
+label{
+    font-weight: bolder;
+    color: black;
+}
+.cursor{
+    cursor: pointer;
+}
+.up-arrow {
+    position: relative;
+    background: #003087;
+    color: #FFF;
+    text-decoration: none;
+    padding: 20px;
+    border: 1px solid #5bc0de;
+}
+.up-arrow:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 20px;
+    bottom: 100%;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #5bc0de;
+    border-top: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+.up-arrow-os:after{
+    left: 19em;
+    border-bottom: 10px solid #5bc0de;
+}
+.up-arrow-sched:after{
+    left: 34em;
+    border-bottom: 10px solid #5bc0de;
+}
+.up-arrow-preview:after{
+    left: 48em;
+    border-bottom: 10px solid #5bc0de;
+}
+.up-arrow-confirmation:after{
+    left: 56em;
+    border-bottom: 10px solid #5bc0de;
+}
+
+.content-div{
+    border-radius: 4px;
+    box-sizing: border-box;
+    /*border: 1px solid black ;*/
+    background-color: rgba(255,255,255,0.9);
+    opacity: 0.9;
+    z-index: 1024;
+    margin: 20px 0px;
+}
+
+/*.up-arrow{*/
+    /*border: 1px solid #337ab7;*/
+/*}*/
+.up-arrow-os{
+    border: 1px solid #5bc0de;
+}
+.up-arrow-sched{
+    /*border: 1px solid #ec971f;*/
+}
+.up-arrow-confirmation{
+    /*border: 1px solid #5cb85c;*/
+}
+
+.select-box{
+    width: 100%;
+    background-color: #e9e9e9 !important;
+    padding: 5px 10px !important;
+    background: #fff url(../images/down-arrow.png) no-repeat 100% center !important;
+    background: none\9 !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    color: #646464 !important;
+    border: solid 1px #ccc !important;
+    vertical-align: middle !important;
+    border-radius: 4px !important;
+    background-size: 26px !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    cursor: pointer !important;
+    list-style : none;
+}
+
+.btn-icon{
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 5px 5px 2px 6px;
+    color: #646464;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.mrg-btm-2em{
+    margin-bottom: 2em;
+}
+
+.btn-next{
+    background-color: #008ac5;
+    font-weight: 700 !important;
+    border-radius: 20px !important;
+    color: white;
+}
+
+.dataTables_length{margin-top: 1em;margin-left: 1em}
+.dataTables_filter{margin-top: 1em;margin-right: 1em }
+
+tr th,tr td{
+    text-align: center;
+}
+
+.wrapper{
+    margin:0 auto;
+    max-width: 80% !important;
+}
+
+.cvs-datepicker{
+    z-index: 1024 !important;
+}
+
+.multiSelectClose{
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+#templateContainer{
+    height: 300px;
+}
+
+/********* Bootstrap Override ***********/
+.dl-horizontal dt{
+    width: 170px;
+    min-height: 25px;
+}
+.panel-body .dl-horizontal{
+    margin-bottom: 0;
+}
+.multiSelect > button{
+    text-align: left;
+}
+.modal-dialog{
+    width: 700px !important;
+}
+
+/**** Breadcrumb ****/
+
+.breadcrumb {
+    /*centering*/
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 0;
+    padding: 0;
+    width:100%;
+    margin-bottom: 0px;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    outline: none;
+    display: block;
+    float: left;
+    font-size: 13px;
+    line-height: 36px;
+    color: #5bc0de;
+    padding: 0 10px 0 30px;
+    background: #fff;
+    position: relative;
+    border: 1px solid #ccc;
+}
+.breadcrumb a.disabled{pointer-events: none;}
+/*since the first link does not have a triangle before it we can reduce the left padding to make it look consistent with other links*/
+.breadcrumb a:first-child {
+    padding-left: 10px;
+    border-radius: 0; /*to match with the parent's radius*/
+    width: 26%;
+}
+.breadcrumb a:nth-child(2){
+    width: 23%;
+}
+.breadcrumb a:nth-child(3){
+    width: 22%;    
+}
+.breadcrumb a:nth-child(4){
+    width: 11%;
+}
+.breadcrumb a:first-child:before {
+    left: 14px;
+}
+.breadcrumb a:last-child {
+    border-radius: 0; /*this was to prevent glitches on hover*/
+    padding-right: 20px;
+    width: 18%;
+}
+
+/*hover/active styles*/
+.breadcrumb a.active, .breadcrumb a:hover{
+    background: #5bc0de;
+    color: #fff;
+}
+.breadcrumb a.active:after, .breadcrumb a:hover:after {
+    background: #5bc0de;
+    color: #fff;
+}
+
+/*adding the arrows for the breadcrumbs using rotated pseudo elements*/
+.breadcrumb a:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -19px;
+    width: 36px;
+    height: 36px;
+    transform: scale(0.707) rotate(45deg);
+    z-index: 1;
+    background: #fff;
+    border-radius: 0 5px 0 50px;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+/*we dont need an arrow after the last link*/
+.breadcrumb a:last-child:after {
+    content: none;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    font-weight: normal;
+    border: 1px solid #CEBFBF;
+    padding: 3px;
+}
+
+.progress{margin: 10px;}
+
+@media (min-width: 1200px){
+    .container {
+        width: 60%;
+    }
+    .dashboardWidth{
+        width: 80% !important;
+    }
+}
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media only screen and (max-width: 760px),(min-device-width: 768px) and (max-device-width: 1024px){
+   /* Force table to not be like tables anymore */
+
+table.dataTable thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+table.similar-table-list thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+table.os-table thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}    
+    table, thead, tbody, th, td, tr { 
+        display: block; 
+    }
+    table.dataTable thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    /* Hide table headers (but not display: none;, for accessibility) */
+    table.dataTable thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    table.dataTable tr { border: 1px solid #ccc; }
+    
+    table.dataTable td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 50% !important; 
+        text-align: left !important;
+    }
+    
+    table.dataTable td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        font-weight: bold;
+    }
+    
+    /*
+    Label the data
+    */
+    table.dataTable td:nth-of-type(1):before { content: "ID"; }
+    table.dataTable td:nth-of-type(2):before { content: "Template ID"; }
+    table.dataTable td:nth-of-type(3):before { content: "Name"; }
+    table.dataTable td:nth-of-type(4):before { content: "Line of Business"; }
+    table.dataTable td:nth-of-type(5):before { content: "Create Date"; }
+    table.dataTable td:nth-of-type(6):before { content: "Type"; }
+    table.dataTable td:nth-of-type(7):before { content: "Delivery Mode"; }
+    table.dataTable td:nth-of-type(8):before { content: "Enable/Disable Flag"; }
+    table.dataTable td:nth-of-type(9):before { content: ""; }
+
+    //For similar table modal list
+    table.similar-table-list thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    /* Hide table headers (but not display: none;, for accessibility) */
+    table.similar-table-list thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    table.similar-table-list tr { border: 1px solid #ccc; }
+    
+    table.similar-table-list td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 50% !important; 
+        text-align: left !important;
+    }
+    
+    table.similar-table-list td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        font-weight: bold;
+    }
+    
+    /*
+    Label the data
+    */
+    table.similar-table-list td:nth-of-type(1):before { content: "ID"; }
+    table.similar-table-list td:nth-of-type(2):before { content: "Template ID"; }
+    table.similar-table-list td:nth-of-type(3):before { content: "Name"; }
+    table.similar-table-list td:nth-of-type(4):before { content: "Line of Business"; }
+    table.similar-table-list td:nth-of-type(5):before { content: "Create Date"; }
+    table.similar-table-list td:nth-of-type(6):before { content: "Type"; }
+    table.similar-table-list td:nth-of-type(7):before { content: "Delivery Mode"; }
+    table.similar-table-list td:nth-of-type(8):before { content: "View"; }
+    
+
+    table.os-table thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    /* Hide table headers (but not display: none;, for accessibility) */
+    table.os-table thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    table.os-table tr { border: 1px solid #ccc; }
+    
+    table.os-table td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 50% !important; 
+        text-align: left !important;
+    }
+    
+    table.os-table td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 15px;
+        left: 10px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        font-weight: bold;
+    }
+    
+    /*
+    Label the data
+    */
+    table.os-table td:nth-of-type(1):before { content: "Business"; }
+    table.os-table td:nth-of-type(2):before { content: "Condition"; }
+    table.os-table td:nth-of-type(3):before { content: "Condition Match"; }
+    table.os-table td:nth-of-type(4):before { content: "Relationship to Rule"; }
+    table.os-table td:nth-of-type(5):before { content: ""; }
+
+    table.os-table-preview thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    /* Hide table headers (but not display: none;, for accessibility) */
+    table.os-table-preview thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    table.os-table-preview tr { border: 1px solid #ccc; }
+    
+    table.os-table-preview td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 50% !important; 
+        text-align: left !important;
+    }
+    
+    table.os-table-preview td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        font-weight: bold;
+    }
+    
+    /*
+    Label the data
+    */
+    table.os-table-preview td:nth-of-type(1):before { content: "Business"; }
+    table.os-table-preview td:nth-of-type(2):before { content: "Condition"; }
+    table.os-table-preview td:nth-of-type(3):before { content: "Condition Match"; }
+    table.os-table-preview td:nth-of-type(4):before { content: "Relationship to Rule"; }
+    table.os-table-preview td:nth-of-type(5):before { content: ""; }
+
+}
+
+@media (max-width: 767px){
+    #DataTables_Table_0_length,#DataTables_Table_0_filter,#DataTables_Table_0_info,#DataTables_Table_0_paginate{display: none !important;}
+    #DataTables_Table_1_length,#DataTables_Table_1_filter,#DataTables_Table_1_info,#DataTables_Table_1_paginate{display: none !important;}
+    .modal-dialog {
+        width: 95% !important;
+    }
+    .onoffswitch{
+        margin: 0;
+    }
+    .btn-breadcrumb .btn {
+       padding: 6px 12px 6px 15px;
+    }
+    .btn-breadcrumb .btn:last-child {
+        padding: 6px 18px 6px 20px;
+    }
+    .back-dash{
+        top: auto;bottom: 1em;
+    }
+    .nav-title-text{
+        top: 35%;
+    }
+    .welcome{
+        top: auto;bottom: 1em;
+    }    
+    .desk-breadcrumb{
+        display: none;
+    }
+    .mob-breadcrumb{
+        display: block;
+    }
+    .dashboardWidth{width: 95%;}
+    .mobileAddCampaign{display: block;}
+    .table-responsive{border: 0;}
+    .btn{font-size: 12px;}
+    .breadcrumb a:first-child {width: 18%;}
+    .breadcrumb a:nth-child(2) {width: 18%;}
+    .breadcrumb a:nth-child(3) {width: 18%;}
+    .breadcrumb a:nth-child(4) {width: 24%;}
+    .breadcrumb a:last-child {width: 22%;}
+
+
+    .up-arrow-os:after{
+        left: 24%;
+    }
+    .up-arrow-sched:after{
+        left: 44%;
+    }
+    .up-arrow-preview:after{
+        left: 64%;
+    }
+    .up-arrow-confirmation:after{
+        left: 90%;
+    }
+
+
+
+}
+
+.divider {
+    display: inline-block;
+    width: 0;
+    height: 1em;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
